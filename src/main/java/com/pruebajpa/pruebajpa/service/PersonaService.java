@@ -45,6 +45,8 @@ public class PersonaService implements IPersonaService{
         persona.setApellido(nuevoApellido);
         persona.setEdad(nuevoEdad);
 
+        this.personaRepository.save(persona);
+
         return persona;
 
     }

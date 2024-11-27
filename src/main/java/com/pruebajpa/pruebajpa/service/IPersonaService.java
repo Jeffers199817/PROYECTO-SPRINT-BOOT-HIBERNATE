@@ -10,5 +10,5 @@ public interface IPersonaService {
     public Persona traerPersona(Long id);
     public void crearPersona(Persona persona);
     public void eliminarPersona(Long id);
-    public void editarPersona(long idOriginal, long idNuevo, String nuevoNombre ,String nuevoApellido, String nuevoEdad, String nuevaEdad );
+    public Persona editarPersona(long idOriginal, long idNuevo, String nuevoNombre ,String nuevoApellido, int nuevoEdad );
 }

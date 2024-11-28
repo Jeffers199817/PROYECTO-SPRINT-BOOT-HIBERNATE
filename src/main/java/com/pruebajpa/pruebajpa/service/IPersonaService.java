@@ -12,4 +12,6 @@ public interface IPersonaService {
     public void crearPersona(Persona persona);
     public void eliminarPersona(Long id);
     public Persona editarPersona(long idOriginal, long idNuevo, String nuevoNombre ,String nuevoApellido, int nuevoEdad, Mascota nuevoMasco);
+
+    public void editarPersona(Persona persona);
 }

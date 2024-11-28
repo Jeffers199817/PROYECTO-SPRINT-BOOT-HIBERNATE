@@ -61,4 +61,14 @@ public class PersonaController {
         return persona;
     }
 
+
+    @PutMapping( "persona/editar1")
+    public Persona edtarPersona1(@RequestBody Persona persona){
+
+        personaService.editarPersona(persona);
+
+        return personaService.traerPersona(persona.getId());
+
+    }
+
 }

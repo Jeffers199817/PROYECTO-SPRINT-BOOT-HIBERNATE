@@ -47,9 +47,16 @@ public class PersonaService implements IPersonaService{
         persona.setEdad(nuevoEdad);
         persona.setUnaMascota(nuevoMasco);
 
-        this.personaRepository.save(persona);
+        this.crearPersona(persona);
 
         return persona;
+
+    }
+
+    @Override
+    public void editarPersona(Persona persona) {
+
+        this.crearPersona(persona);
 
     }
 }

@@ -1,6 +1,8 @@
 package com.pruebajpa.pruebajpa.controller;
 
+import com.pruebajpa.pruebajpa.modelo.Mascota;
 import com.pruebajpa.pruebajpa.modelo.Persona;
+import com.pruebajpa.pruebajpa.service.MascotaService;
 import com.pruebajpa.pruebajpa.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ public class PersonaController {
 
     @Autowired
     private PersonaService personaService;
+    private MascotaService mascotaService;
 
 
     //Traer personas
@@ -48,7 +51,9 @@ public class PersonaController {
                                 @RequestParam(required = false, name="edad" ) int edadNuevo ,
                                 @RequestParam(required = false, name="masco") Long idMasco  ){
 
-        personaService.editarPersona(idOriginal, idNuevo, nombreNuevo, apellidoNuevo, edadNuevo, idMasco);
+        Mascota masco = mascotaService.traerMascota(idMasco);
+
+        personaService.editarPersona(idOriginal, idNuevo, nombreNuevo, apellidoNuevo, edadNuevo, masco);
 
          Persona persona = personaService.traerPersona(idNuevo);
 

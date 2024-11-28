@@ -66,6 +66,7 @@ public class PersonaController {
     public Persona edtarPersona1(@RequestBody Persona persona){
 
         personaService.editarPersona(persona);
+        System.out.println("FINAL DEL PROYECTO ");
 
         return personaService.traerPersona(persona.getId());
 

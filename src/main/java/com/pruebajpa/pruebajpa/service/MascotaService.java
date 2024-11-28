@@ -47,6 +47,9 @@ public class MascotaService implements IMascotraService{
         masco.setEspecie(especieNuevo);
         masco.setRaza(razaNuevo);
         masco.setColor(colorNuevo);
+
+        mascotaRepository.save(masco);
+
         return masco;
     }
 }

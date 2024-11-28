@@ -1,5 +1,6 @@
 package com.pruebajpa.pruebajpa.service;
 
+import com.pruebajpa.pruebajpa.modelo.Mascota;
 import com.pruebajpa.pruebajpa.modelo.Persona;
 import com.pruebajpa.pruebajpa.repository.IPersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,13 +38,14 @@ public class PersonaService implements IPersonaService{
     }
 
     @Override
-    public Persona editarPersona(long idOriginal, long idNuevo, String nuevoNombre, String nuevoApellido, int nuevoEdad) {
+    public Persona editarPersona(long idOriginal, long idNuevo, String nuevoNombre, String nuevoApellido, int nuevoEdad,Mascota nuevoMasco) {
 
         Persona persona = this.traerPersona(idOriginal);
         persona.setId(idNuevo);
         persona.setNombre(nuevoNombre);
         persona.setApellido(nuevoApellido);
         persona.setEdad(nuevoEdad);
+        persona.setUnaMascota(nuevoMasco);
 
         this.personaRepository.save(persona);
 

@@ -45,9 +45,10 @@ public class PersonaController {
     public Persona editarPersona(@RequestParam Long idOriginal, @RequestParam(required = false, name = "idnuevo") Long idNuevo ,
                                 @RequestParam(required = false, name="nombre") String nombreNuevo,
                                 @RequestParam(required = false, name="apellido") String apellidoNuevo,
-                                @RequestParam(required = false, name="edad" ) int edadNuevo ){
+                                @RequestParam(required = false, name="edad" ) int edadNuevo ,
+                                @RequestParam(required = false, name="masco") Long idMasco  ){
 
-        personaService.editarPersona(idOriginal, idNuevo, nombreNuevo, apellidoNuevo, edadNuevo);
+        personaService.editarPersona(idOriginal, idNuevo, nombreNuevo, apellidoNuevo, edadNuevo, idMasco);
 
          Persona persona = personaService.traerPersona(idNuevo);
 

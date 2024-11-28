@@ -14,6 +14,7 @@ public class PersonaController {
 
     @Autowired
     private PersonaService personaService;
+    @Autowired
     private MascotaService mascotaService;
 
 
